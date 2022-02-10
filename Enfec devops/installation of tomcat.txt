@@ -1,0 +1,21 @@
+1.Sudo yum list | grep - i java-1.8.0 devel X86_64
+2. Download java through yum package..
+3.Check java is installed with java --version.
+4.Goto to the offical site of apache tomcat to the download Section of tomcat 8
+5. Download it into the /opt  through wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.75/bin/apache-tomcat-8.5.75-windows-x64.zip
+6.unzip the file by using unzip command
+7.Move zip to the /tmp folder for futher use purpose by using "mv" command
+8.Rename the unzipped folder with the "mv" command
+9.Change the group level and owner permission like "chown -R user:user foldername"
+10.Open to the tomcat folder in /opt/tomcat/conf
+11.For changing the port no we use goto the "vi server.xml" file and change "8080" to "8050" in -->69 line
+12. /opt/tomcat/conf--> vi tomcat-user.xml---> change the username and password and configure manager-gui and manager-script in the above lines..wq! afte this 2 line in that paragraph should be commented.
+13.Go to vi /opt/tomcat/webapps/manager/META-INF/context.xml
+14.<org.apache.catalina.valves --->2 lines are commented with <!-- this is comment line -->
+15.Goto /opt/tomcat/bin/
+16. Give execute permission for files containing with .sh extension
+17."Sudo chmod u+x *.sh"
+18. "./startup.sh"
+#BY default tomcat port no is 8080
+#BY default tomcat server in aws traffic rules are not allowed.provide all traffice allowed to all port.
+

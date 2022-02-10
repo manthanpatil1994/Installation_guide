@@ -1,0 +1,17 @@
+1. Goto the nexus site i.e help.sonatype.com and search for download section
+https://download.sonatype.com/nexus/3/nexus-3.37.3-02-unix.tar.gz
+2. downoad nexus through wget in your machine
+3.unzip the tar.gz with the hlep of tar -xvf ..
+4.rename the file by using rm and move  tar.gz file to the /tmp with mv command
+5.Allow user permission to the nexus and sonatype folder by "chown -R user:user filename"
+6.open nexus/bin/nexus.rc and add your user in the  ""  and uncomment it
+7.goto the cd /etc/init.d folder
+8.sudo ln-s /opt/nexus/bin/nexus  /etc/init.d/nexus --->copying a softlink to the init.d directory to make nexus as a service
+9.sudo chkconfig --add nexus
+10.sudo chkconfig nexus on
+11.sudo systemctl start nexus
+12.cd /opt/nexus/bin/"./nexus start"
+13. "./nexus status"
+#default port no for nexus is 8081.
+#In aws AMI (amazon machine image) it should be selected as t2.medium or above.
+#Allow outbound or inbound permission to access in the website.

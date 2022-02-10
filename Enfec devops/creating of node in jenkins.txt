@@ -1,0 +1,7 @@
+1.creating slave machine
+2.creating password for the user (ec2-user)
+3.sudo nano /etc/ssh/sshd_config and edit passwordAuthentication to yes and PubkeyAuthentication to yes
+4.sudo systemctl restart sshd
+5.we should copy public ip of jenkins machine in the cd -->.ssh/authorized.keys without space between keys
+6.Go to the jenkins server and configure in crediencials that  machine to login  by username  with ssh (private key of jenkins machine to check the public key in slave machine)
+7.Relanch the agent machine

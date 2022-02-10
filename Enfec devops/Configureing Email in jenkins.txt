@@ -1,0 +1,17 @@
+1.login to jenkins machine in browser
+2. click on the manage jenkins
+3. click on the configure system
+4.scroll down until Email- notification(last option)
+5.open new in browser and type "smtp details for gmail" copy the "smtp.gmail.com" from there..
+6.Paste in SMTP server.
+7."Default user e-mail suffix" should be empty as it is
+8.Then select SMTP Authentication and give your  username and password.
+9.select SSL
+10.let SMTP Port and reply-To-address be empty as it is..
+11.configure the setting in gmail..goto setting in gmail
+12. goto Account "Account and Import" and click on other google account settings..
+13.go to the security and disable 2-step verification.
+14.going to less secure app access adn allow it to on 
+15.goto jenkins window and test again and copy the error and paste in new tab and goto first link of stackoverflow
+16. click on DisplayUnlockCaptach link and allow access to your google and turn on..
+17.goto jenkins tab and test again it will success..

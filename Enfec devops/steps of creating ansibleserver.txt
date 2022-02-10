@@ -1,0 +1,20 @@
+process of creating ansible
+
+1.created 3 machines (ansibleserver ,node1,node2)
+2.installed ansible on the main server(ansbileserver)
+3.creating common userlike (ansible) in all the instances
+5.vi /etc/ansible/ansible-cfg --> giving permission like removing # from inventory and sudo_user
+4. vi /etc/ansible/hosts--> giving group name [webserver] and ip of node1 & node2 private ip
+6.giving ansible user as sudo priviliges in visudo "ansible AL=(ALL)       NOPASSWD: ALL"  100-line
+7./etc/ssh/sshd_config --> giving permission or removing # like permitrootlogin and passwdauthentication to Yes 
+8.service sshd restart   (or) sudo systemctl restart sshd
+9.cd .ssh/ --> ansiblecontrolserver
+10.ssh-keygen ---> to generate public and private keys
+11.ssh-copy-ip ansible@node1 ip private ----->for removing password to connect nodes in ansibleserver
+12.ssh-copy-ip ansible@node2 ip private
+13.## pulic ip of ansible server will be copied to the node machines
+
+
+ssh 172.31.11.107
+ansible all --list-hosts
+ansible all -m ping

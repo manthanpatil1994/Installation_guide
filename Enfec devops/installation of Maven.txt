@@ -1,0 +1,12 @@
+1.Goto to the official website of maven and select download and copy url
+https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.zip
+2.download through wget and unzip apache maven
+3.rename the unziped folder and mv the zip to the /tmp folder
+4.change owner and group permissions like "sudo chown -R user:user <filename>"
+5.goto the home directory by "cd  or cd~ command"of the user and search for .bash_profile add two varibles.
+6.ls -la and vi .bash_profile and declaring two variables.
+M2_HOME=/opt/maven/bin
+M2=$M2_HOME/bin
+add M2_HOME AND $M2 in path and save.
+7."source .bash_profile"
+8.Now check maven with mvn -version command..

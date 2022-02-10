@@ -1,0 +1,21 @@
+1.Goto the official website of jenkins installtion
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+2. choose long-term support release and follow it step-by-step.
+i)  sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+ii) sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+iii) sudo yum upgrade
+iv) sudo yum install epel-release java-11-openjdk-devel
+v) sudo yum install jenkins
+vi) sudo systemctl daemon-reload
+vii) sudo systemctl start jenkins
+viii) sudo systemctl enable jenkins
+ix) sudo systemctl status jenkins
+3.Copy the public ip of the machine and paste in browser with " :8080" port which is default port for jenkins
+4.Be default aws instances are not allowed to access from the outside traffic so we should enable in security rule by selecting all traffic for all ports anywhere.
+5.copy /var/lib/jenkis/secrets/initial/AdminPassword from the jenkins and cat it in the jenkins terminal to generate 
+password of jenkins. and change the existing password .
+6.install all suggested plugins shown in jenkins
+
+
+

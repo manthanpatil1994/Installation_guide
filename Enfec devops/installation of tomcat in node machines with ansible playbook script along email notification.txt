@@ -1,0 +1,16 @@
+1.lanch jenkins first
+2.installing ansible in jenkins
+3.login to the jenkins user --> sudo su - jenkins -s /bin/bash 
+4.ssh-keygen so that id_rsa and id_rsa.pub will be generated.
+4.lanch to nodes in ec2 and configure passwd for the ec2-user user
+5. sudo vi /etc/ssh/sshd_config --> allow pubkeyAuthentication and PasswdAuthentication to --Yes
+6.sudo systemctl restart sshd 
+7.copy jenkins machine public key to the node machine home user authorized.keys file.
+8.select one project like hello-world in github and add files like tomcat installation (tomcat.yml) and deploy(deploy.yml) and inventoryas(inventory.dev).
+9.Goto jenkins and create one pipeline with the stages
+--> checkout(hello-world.git),
+-->build(mvn package),
+-->deploye1(tomcat.yml & inventory.yml),
+-->deploye2(deploy.yml & inventory.yml).with "rename stage"
+10.add smtp mail notification  syntax in the end of the script.
+11.copy the public ip of each node and paste it with 8080 port along with hello-worl-war file in browser..

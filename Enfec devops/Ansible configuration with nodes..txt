@@ -1,0 +1,26 @@
+1.Lanch 3 ec2-machines in aws like (ansiblecontrolserver,node1,node2)
+2.install ansible in the ansiber server with the following commands.
+i) sudo yum install epel-release
+ii) sudo yum install -y ansible ---> check whether installed by using ansible --version
+3.goto the /etc/ansible/hosts
+# vi /etc/ansible/hosts and give private of node1 and node2 with [group name] 
+4.goto " vi /etc/ansible/ansible-cfg" uncomment the permission of inventory and sudo_user=root
+5.add "ansible user" for all the instances with the useradd command also set password for the user using passwd(in both the nodes).
+6.goto ansible user with "sudo su - ansible" --> by default for ansible user there will not be any sudo priviliages so we are giving ansible user as sudo priviledges by using "visudo" 
+7."ansible   ALL= (ALL)      NOPASSWD: ALL" --> under root priviledges.
+8.do the same process in node1 and node2 in ansible user.
+9.For allowing node machine to access with the username and password providing privileges.,
+"sudo vi /etc/ssh/sshd_config by using"
+uncomment passwordAuthenication and make the permisssion as "yes".
+10.after configuration we need to restart the sshd service with " sudo systemctl restart sshd " do it for all the machines.
+11. Switch to the ansible user and generate public and private keys by using "ssh-keygen" command in "ansiblecontrolserver"
+12.In order to configure the node machines we are copying the public key in both nodes to establish connection between them.
+"ssh-copy-id  ansible@<private ip of node1>" --->in ansiblecontrolserver
+"ssh-copy-id  ansible@<private ip of node2>"----> in  ansiblecontrolserver
+13.ansible all -m ping  (or) ansible all --list-hosts.
+
+
+
+
+
+
